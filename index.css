@@ -1,0 +1,139 @@
+/* Reset & Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff6b81;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff6b81;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    padding: 100px 10% 80px;
+    text-align: center;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #141e30, #243b55);
+    background-blend-mode: overlay;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeDown 1s ease forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #eee;
+    animation: fadeUp 1s ease forwards;
+}
+
+.btn {
+    background: linear-gradient(45deg, #ff6b81, #f94d6a);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 10px 0 0 0;
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
